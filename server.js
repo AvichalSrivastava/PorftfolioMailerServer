@@ -62,7 +62,10 @@ app.post('/send',(req,res)=>
           });
         
       })
-      .catch(()=>res.status("400").json("Failed to send. Server Exception"));
+      .catch(()=>
+        {
+          res.status("400").json("Failed to send. Server Exception");
+        });
 });
 
 app.listen(PORT,()=>{console.log('server is running on port '+PORT);});
