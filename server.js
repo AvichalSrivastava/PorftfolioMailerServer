@@ -2,10 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const knex = require('knex');
 var nodemailer = require('nodemailer');
+var cors = require('cors');
 const app = express();
 var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
+app.use(cors);
 const db = knex({
   client: 'pg',
   connection: {
